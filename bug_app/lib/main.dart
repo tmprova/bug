@@ -100,7 +100,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
-      title: 'Planet App',
+      title: 'Bug App',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),

@@ -118,7 +118,7 @@ class MyApp extends ConsumerWidget {
         //     return user != null ? HomeScreen() : const LoginScreen();
         //   },
         // ),
-        // onGenerateRoute: Routes.generateRoute,
+
         future: verifyUserToken(ref),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {

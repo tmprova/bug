@@ -40,7 +40,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         context: context,
         email: email,
         password: password,
-        // ref: ref,
+        ref: ref,
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(

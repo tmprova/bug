@@ -75,7 +75,7 @@ class AuthController {
     required context,
     required String email,
     required String password,
-    // required WidgetRef ref,
+    required WidgetRef ref,
   }) async {
     try {
       http.Response response = await http.post(
@@ -130,7 +130,8 @@ class AuthController {
           final userJson = jsonEncode(userMap);
 
           // ✅ This will now update state and save to SharedPreferences
-          providerContainer.read(authProvider.notifier).setUser(userJson);
+          // providerContainer.read(authProvider.notifier).setUser(userJson);
+          ref.read(authProvider.notifier).setUser(userJson);
 
           if (context.mounted) {
             Navigator.pushAndRemoveUntil(

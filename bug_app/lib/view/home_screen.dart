@@ -18,11 +18,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final user = ref.read(authProvider);
-    //  if (user == null) {
-    //       // If the user data is null, show a loading spinner or navigate to login screen
-    //    return const Center(child: CircularProgressIndicator());
-    //  }
+    final isLoading = ref.watch(authLoadingProvider);
+    final user = ref.watch(authProvider);
+
+    // 🕒 Show loading spinner while user data is being restored
+    if (isLoading) {
+      return const Scaffold(
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
     final isSeller = user?.role == 'seller';
 
     // Dynamically configure navigation items and page list
